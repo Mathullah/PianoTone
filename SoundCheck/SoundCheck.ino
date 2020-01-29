@@ -13,7 +13,7 @@ void setup() {
   tone(OUTPUT_PIN, 1568);
   delay(500);
   noTone(OUTPUT_PIN);  
-  delay(1000);
+  delay(500);
 }
 
 void loop() {
