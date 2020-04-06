@@ -1,6 +1,7 @@
 const uint16_t MIN_TONE_FREQUENCY(100);
+const uint16_t MIN_TONE_FREQUENCY(440);
 const uint16_t MAX_TONE_FREQUENCY(5000);
-const uint16_t FREQUENCY_STEP(20);
+const uint16_t FREQUENCY_STEP(40);
 
 const uint8_t OUTPUT_PIN(8);
 
@@ -17,7 +18,6 @@ void setup() {
 }
 
 void loop() {
-
 
   uint16_t Frequency (MIN_TONE_FREQUENCY);
 
