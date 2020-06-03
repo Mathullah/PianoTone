@@ -8,7 +8,7 @@ static const uint16_t main_0s5_dealy = 500 / portTICK_PERIOD_MS;
 
 void setup() {
 
-    xTaskCreate(TaskBlink, (const portCHAR *)"Blink", 128, NULL, 2, NULL );
+    xTaskCreate(TaskBlink, "Blink", 128, NULL, 2, NULL );
 
 }
 
@@ -17,14 +17,11 @@ void loop()
 
 }
 
-
-
 void TaskBlink(void *pvParameters)
 {
   (void) pvParameters;
 
   pinMode(LED_BUILTIN, OUTPUT);
-
   TickType_t LastWakeTime = xTaskGetTickCount();
 
   for (;;)
@@ -33,6 +30,5 @@ void TaskBlink(void *pvParameters)
     
     unsigned NewState = (digitalRead(LED_BUILTIN) ? LOW : HIGH);
     digitalWrite(LED_BUILTIN, NewState);
-
   }
 }
