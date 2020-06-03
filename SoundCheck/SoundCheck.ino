@@ -30,30 +30,6 @@ static const float frequency_table[] = {27.5000F, 29.1352F, 30.8677F, 32.7032F, 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 void setup() {
 
   tone(OUTPUT_PIN, static_cast<uint16_t>round(tone_C6));
