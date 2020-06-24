@@ -12,7 +12,7 @@ const float tone_E6(1318.51F);
 const float tone_G6(1567.98F);
 
 static const uint16_t main_1s_dealy = 1000 / portTICK_PERIOD_MS;
-static const uint16_t main_0s5_dealy = 500 / portTICK_PERIOD_MS;
+static const uint16_t main_0s5_dealy = 200 / portTICK_PERIOD_MS;
 static const uint16_t main_0s1_dealy = 100 / portTICK_PERIOD_MS;
 
 static const uint16_t Periode(65535 - 100);
@@ -94,7 +94,7 @@ void TaskBeep(void *pvParameters)
             tone(BUZZER_PIN, static_cast<uint16_t>round(tone_E6));
             vTaskDelay(main_0s5_dealy);
             tone(BUZZER_PIN, static_cast<uint16_t>round(tone_G6));
-            vTaskDelay(main_0s5_dealy);
+            vTaskDelay(2*main_0s5_dealy);
             noTone(BUZZER_PIN);
 
             OldState != DebouncedInput;
