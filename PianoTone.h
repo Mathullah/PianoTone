@@ -6,14 +6,14 @@
  * @brief   Header file holding CPianoTone class declaration.
  *
  */
- 
+
 #ifndef PIANO_TONE
 	#define PIANO_TONE
-	
+
 class CPianoTone
 {
     public:
-    
+
         typedef enum
         {
             TONE_NONE = 0,
@@ -109,20 +109,20 @@ class CPianoTone
 
         CPianoTone();
         CPianoTone(const uint8_t Pin);
-        
+
         uint16_t GetFrequency(const piano_tones_t Tone);
         void Play(const piano_tones_t Tone);
         void Mute(void);
-        
+
     protected:
 
     private:
 
         static const float frequency_table[];
-        
+
         uint8_t       m_Pin;
         piano_tones_t m_Note;
 
 };
-	
+
 #endif
